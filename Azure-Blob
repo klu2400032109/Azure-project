@@ -1,0 +1,46 @@
+Azure Blob Versioning and Point-in-Time Restore
+
+Project Code: 24CC3046-P054
+Domain: Data Protection
+
+1. Problem Statement
+Organizations store critical data in Azure Blob Storage, where accidental overwrites, deletions, or unwanted changes to blobs can result in data loss. A reliable recovery mechanism is required to preserve previous blob states and restore data to an earlier point in time. The project aims to implement Azure Blob Versioning and Point-in-Time Restore to provide a recovery window of at least 30 days while considering the storage cost caused by accumulating blob versions and the prerequisites required for point-in-time restore.
+
+2. Objectives
+•	Enable Azure Blob Versioning to automatically preserve previous versions of blobs.
+•	Provide recovery from accidental blob overwrites or unwanted modifications.
+•	Implement and demonstrate Point-in-Time Restore for recovering blob data to an earlier state.
+•	Support a minimum 30-day recovery window for protected blob data.
+•	Understand and configure the prerequisites required for Point-in-Time Restore.
+•	Monitor version accumulation and consider its impact on Azure storage costs.
+•	Validate the recovery process through controlled overwrite, deletion, and restoration scenarios.
+
+3. Requirements
+
+3.1 Functional Requirements
+•	The system shall enable blob versioning for the selected Azure Storage account.
+•	The system shall automatically retain previous versions when blobs are modified or overwritten.
+•	The system shall allow users to identify and recover an appropriate previous blob version.
+•	The system shall support point-in-time restoration within the configured recovery period.
+•	The system shall provide a recovery window of at least 30 days.
+•	The system shall allow testing of recovery after accidental blob changes or deletion scenarios.
+•	The system shall verify that restored data matches the expected earlier state.
+
+3.2 Technical Requirements
+•	An active Microsoft Azure subscription.
+•	An Azure Storage Account with Blob Storage support.
+•	A Blob Container for storing test and protected data.
+•	Azure Blob Versioning enabled on the storage account.
+•	Required data protection and restore features configured according to Azure prerequisites.
+•	Azure Portal, Azure CLI, or Azure PowerShell for configuration and testing.
+•	Appropriate permissions to configure storage account data protection settings.
+•	Sufficient storage capacity and monitoring to handle additional blob versions.
+
+3.3 Constraints / Bottlenecks
+•	Large numbers of retained blob versions can significantly increase storage consumption and cost.
+•	Point-in-Time Restore has specific feature and configuration prerequisites.
+•	The recovery period and retention configuration must be planned carefully.
+•	Restore operations should be tested without unintentionally affecting unrelated data.
+
+4. Expected Outcome
+The completed system should demonstrate that Azure Blob Storage can protect data from accidental overwrites and similar incidents by retaining previous versions and restoring blob data to an earlier point in time. The implementation should successfully demonstrate a 30-day recovery objective while also identifying the storage-cost implications of version accumulation.
