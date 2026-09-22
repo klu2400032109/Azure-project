@@ -1,0 +1,9 @@
+## Azure Blob Versioning and Point-in-Time Restore
+
+Organizations store critical data in Azure Blob Storage, where accidental overwrites, deletions, or unwanted modifications can cause data loss. This project implements Azure Blob Versioning and Point-in-Time Restore to provide a reliable data recovery mechanism.
+
+Azure Blob Versioning automatically maintains previous versions of blobs whenever data is modified or overwritten. Point-in-Time Restore provides the capability to recover blob data to an earlier state within the configured recovery period. The project targets a minimum 30-day recovery window while considering storage consumption and cost caused by accumulated blob versions.
+
+The implementation includes configuring an Azure Storage Account and Blob Container, enabling blob versioning and required data protection features, performing controlled overwrite and deletion scenarios, and validating the restoration of data to an expected earlier state. The project also monitors version accumulation and considers its impact on Azure storage costs.
+
+The expected outcome is a working demonstration of protection against accidental blob changes and deletion, with successful recovery of blob data using versioning and point-in-time restoration.
